@@ -1,0 +1,9 @@
+{
+  "must_find": [
+    { "type": "performance", "keyword": "blocking", "line_range": [7, 7] },
+    { "type": "performance", "keyword": "time.sleep", "line_range": [15, 15] },
+    { "type": "performance", "keyword": "blocking", "line_range": [22, 25] },
+    { "type": "performance", "keyword": "sequential", "line_range": [12, 16] }
+  ],
+  "should_not_find": []
+}

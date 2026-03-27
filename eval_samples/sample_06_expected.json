@@ -1,0 +1,7 @@
+{
+  "must_find": [],
+  "should_not_find": [
+    { "type": "security", "line": 7, "reason": "MAX_USERNAME_LENGTH는 상수이지 하드코딩된 비밀번호가 아님" },
+    { "type": "security", "line": 8, "reason": "MIN_PASSWORD_LENGTH는 상수이지 하드코딩된 비밀번호가 아님" }
+  ]
+}

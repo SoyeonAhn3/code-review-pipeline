@@ -1,0 +1,8 @@
+{
+  "must_find": [
+    { "type": "security", "keyword": "sql injection", "line_range": [8, 9] },
+    { "type": "security", "keyword": "hardcoded password", "line_range": [3, 3] },
+    { "type": "security", "keyword": "sql injection", "line_range": [22, 22] }
+  ],
+  "should_not_find": []
+}

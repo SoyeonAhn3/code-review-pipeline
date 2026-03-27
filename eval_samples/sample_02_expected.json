@@ -1,0 +1,7 @@
+{
+  "must_find": [
+    { "type": "performance", "keyword": "n+1", "line_range": [10, 16] },
+    { "type": "performance", "keyword": "전체 조회", "line_range": [22, 23] }
+  ],
+  "should_not_find": []
+}

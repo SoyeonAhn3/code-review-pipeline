@@ -1,0 +1,7 @@
+{
+  "must_find": [],
+  "should_not_find": [
+    { "type": "security", "line": 7, "reason": "MOCK_API_KEY는 테스트용 더미 값" },
+    { "type": "security", "line": 8, "reason": "DUMMY_PASSWORD는 테스트용 더미 값" }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "must_find": [
+    { "type": "security", "keyword": "sql injection", "line_range": [10, 10] },
+    { "type": "security", "keyword": "hardcoded", "line_range": [6, 6] },
+    { "type": "security", "keyword": "pickle", "line_range": [16, 16] },
+    { "type": "security", "keyword": "os.system", "line_range": [41, 41] },
+    { "type": "performance", "keyword": "n+1", "line_range": [21, 25] },
+    { "type": "quality", "keyword": "bare except", "line_range": [35, 36] }
+  ],
+  "should_not_find": []
+}

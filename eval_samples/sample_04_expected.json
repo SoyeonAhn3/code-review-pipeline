@@ -1,0 +1,9 @@
+{
+  "must_find": [
+    { "type": "quality", "keyword": "naming", "line_range": [4, 4] },
+    { "type": "quality", "keyword": "magic number", "line_range": [7, 14] },
+    { "type": "quality", "keyword": "complexity", "line_range": [4, 15] },
+    { "type": "quality", "keyword": "magic number", "line_range": [21, 22] }
+  ],
+  "should_not_find": []
+}

@@ -1,0 +1,8 @@
+{
+  "must_find": [
+    { "type": "security", "keyword": "dangerouslySetInnerHTML", "line_range": [7, 7] },
+    { "type": "security", "keyword": "innerHTML", "line_range": [15, 15] },
+    { "type": "security", "keyword": "dangerouslySetInnerHTML", "line_range": [32, 32] }
+  ],
+  "should_not_find": []
+}
