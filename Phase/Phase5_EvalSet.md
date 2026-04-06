@@ -40,6 +40,7 @@
 | 06 | `sample_06_clean_code.py` | 문제 없는 깨끗한 코드 | 오탐 테스트 (false positive) |
 | 07 | `sample_07_tricky_false_pos.py` | 테스트 코드의 하드코딩 값 | 오탐하면 안 됨 |
 | 08 | `sample_08_async_blocking.py` | async 안에서 동기 I/O | Performance 비동기 탐지 |
+| -- | `sample_cross_review_conflict.py` | 보안↔성능 충돌 유발 코드 | 교차 반론 메커니즘 검증 |
 
 ---
 
