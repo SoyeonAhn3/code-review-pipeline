@@ -7,6 +7,12 @@ Multi-Agent 코드 리뷰 자동화 시스템
 
 ---
 
+## Demo
+
+https://github.com/user-attachments/assets/a813bcd0-cd42-4e08-9fa0-9d1b662703f4
+
+---
+
 ## 개발 배경
 
 AI를 활용해 다양한 업무 자동화 프로그램을 개발하는 과정에서, 생성된 코드가 작동은 하지만 아래 문제가 반복 발생:
