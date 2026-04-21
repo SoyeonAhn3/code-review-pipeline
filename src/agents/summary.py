@@ -60,7 +60,12 @@ class SummaryAgent(BaseAgent):
                             "properties": {
                                 "agent": {"type": "string"},
                                 "severity": {"type": "string", "enum": ["critical", "warning", "info"]},
-                                "line": {"type": "integer"},
+                                "line": {"type": "integer", "description": "대표 라인 번호"},
+                                "affected_lines": {
+                                    "type": "array",
+                                    "items": {"type": "integer"},
+                                    "description": "동일 패턴이 반복되는 모든 라인 번호 (통합된 이슈일 때만 사용)",
+                                },
                                 "issue": {"type": "string"},
                                 "suggestion": {"type": "string"},
                             },

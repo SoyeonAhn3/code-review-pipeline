@@ -55,11 +55,14 @@ def fetch_latest_models(api_key: str) -> dict[str, str]:
 
 
 class Config:
+    VALID_PROJECT_LEVELS = ("personal", "internal", "production")
+
     def __init__(self):
         self.api_key = os.getenv("ANTHROPIC_API_KEY", "")
         self.max_code_lines = int(os.getenv("MAX_CODE_LINES", "700"))
         self.max_tokens = int(os.getenv("MAX_TOKENS", "4096"))
         self.github_token = os.getenv("GITHUB_TOKEN", "")
+        self.project_level = "production"
 
         # 모델: .env에 지정된 값 → 없으면 API에서 최신 sonnet 자동 조회 → 실패 시 fallback
         env_model = os.getenv("MODEL_NAME", "")

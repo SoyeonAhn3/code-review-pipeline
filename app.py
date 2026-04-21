@@ -204,11 +204,12 @@ def render_result(result: dict, col):
             render_cross_review(qual.get("cross_review", []))
 
 
-def run_pipeline(code: str, language: str = None, model: str = None) -> dict:
+def run_pipeline(code: str, language: str = None, model: str = None, level: str = "production") -> dict:
     """파이프라인 실행 + 진행 상태 표시."""
     config = Config()
     if model:
         config.model = model
+    config.project_level = level
     config.validate()
     orchestrator = Orchestrator(config)
 
@@ -243,6 +244,15 @@ col_input, col_result = st.columns([1, 1.5])
 with col_input:
     selected_model_label = st.selectbox("모델 선택", list(MODEL_OPTIONS.keys()))
     selected_model = MODEL_OPTIONS[selected_model_label]
+
+    project_level = st.radio(
+        "프로젝트 레벨",
+        ["personal", "internal", "production"],
+        index=2,
+        horizontal=True,
+        help="personal: 개인/학습 프로젝트 (인증 등 인프라 이슈 완화) | "
+             "internal: 사내/팀 내부용 | production: 실서비스 (가장 엄격)",
+    )
 
     input_mode = st.radio(
         "입력 방식",
@@ -281,7 +291,7 @@ with col_input:
                     )
 
             try:
-                result = run_pipeline(code, lang_arg, model=selected_model)
+                result = run_pipeline(code, lang_arg, model=selected_model, level=project_level)
                 st.session_state["result"] = result
             except ValueError as e:
                 st.error(str(e))
@@ -331,7 +341,7 @@ with col_input:
                 for f in selected:
                     st.markdown(f"---\n**{f['filename']}** 리뷰 중...")
                     try:
-                        result = run_pipeline(f["code"], f["language"], model=selected_model)
+                        result = run_pipeline(f["code"], f["language"], model=selected_model, level=project_level)
                         result["_filename"] = f["filename"]
                         all_results.append(result)
                     except ValueError as e:
@@ -357,7 +367,7 @@ with col_input:
                 lang = detect_language_from_filename(f.name)
                 st.markdown(f"---\n**{f.name}** 리뷰 중...")
                 try:
-                    result = run_pipeline(code, lang, model=selected_model)
+                    result = run_pipeline(code, lang, model=selected_model, level=project_level)
                     result["_filename"] = f.name
                     all_results.append(result)
                 except ValueError as e:
