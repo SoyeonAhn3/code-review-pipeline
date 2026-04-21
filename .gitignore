@@ -14,6 +14,7 @@ __pycache__/
 logs/
 archive/
 output/
+review_*.json
 
 # 시스템 파일
 .DS_Store
